@@ -1,0 +1,13 @@
+<div class="todo">
+    <app-create-list-element (itemCreated)="onChange($event)"></app-create-list-element>
+    <hr>
+    <div class="todo-list">
+        <h2>Список текущих задач</h2>
+        <app-view-list-element 
+            *ngFor="let element of todoListElements; let i = index" 
+            [item]="element" 
+            [itemIndex]="i"
+            (itemChanged)="onChange($event)">
+        </app-view-list-element>
+    </div>
+</div>

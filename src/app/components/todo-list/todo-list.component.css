@@ -1,0 +1,11 @@
+.todo-list {
+    text-align: center;
+}
+
+.todo-list h2 {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #0d9e25,#e8c40e);
+    background-clip: text;
+    color: transparent;
+}

@@ -1,0 +1,8 @@
+.create-list-element {
+    text-align: center;
+}
+
+.create-list-element input[type="text"] {
+    width: 80%;
+    margin: 5px;
+}

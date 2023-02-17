@@ -1,0 +1,12 @@
+<div *ngIf="item" [ngClass]="{'list-element': true, 'checked': item.isDone && !isEdit, 'edit': isEdit}">
+    <div class="item">
+        <input type="checkbox" [(ngModel)]="item.isDone" (change)="onChanged()" disabled="isEdit">
+        <label *ngIf="!isEdit">{{item.text}}</label>
+        <input *ngIf="isEdit" type="text" [(ngModel)]="item.text" maxlength="70">
+    </div>
+    <div class="buttons">
+        <span *ngIf="!isEdit" class="edit-btn" (click)="onEdit()"></span>
+        <span *ngIf="isEdit" class="save-btn" (click)="onSave()"></span>
+        <span class="delete-btn" (click)="onDelete()"></span>
+    </div>
+</div>

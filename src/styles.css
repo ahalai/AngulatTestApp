@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.delete-btn {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('./assets/images/cross.png') no-repeat center center / contain;
+    margin: 2px;
+}
+.delete-btn:hover {
+    background: url('./assets/images/cross_hover.png') no-repeat center center / contain;
+}
+
+.edit-btn {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('./assets/images/edit.png') no-repeat center center / contain;
+    margin: 2px;
+}
+.edit-btn:hover {
+    background: url('./assets/images/edit_hover.png') no-repeat center center / contain;
+}
+
+.save-btn {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('./assets/images/check.png') no-repeat center center / contain;
+    margin: 2px;
+}
+.save-btn:hover {
+    background: url('./assets/images/check_hover.png') no-repeat center center / contain;
+}

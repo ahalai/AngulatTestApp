@@ -1,0 +1,36 @@
+.list-element {
+    border-radius: 10px;
+    padding: 5px;
+    margin: 2px;
+}
+
+.list-element.checked {
+    background: rgb(228, 244, 230);
+    border: 3px solid #62aa6e;
+}
+
+.list-element:not(.checked) {
+    background: rgb(247, 238, 238);
+    border: 3px solid #d17b78;
+}
+
+.list-element.edit {
+    background: white;
+    border: 3px solid #818181;
+}
+
+.list-element .item {
+    display: inline-block;
+    width: 94%;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.list-element .buttons {
+    text-align: right;
+    display: inline-block;
+}
+
+.list-element.edit .item input[type="text"] {
+    width: 600px;
+}
