@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TodoListService } from 'src/app/services/todo-list.service';
 
 @Component({
@@ -7,17 +8,31 @@ import { TodoListService } from 'src/app/services/todo-list.service';
   styleUrls: ['./create-list-element.component.css']
 })
 export class CreateListElementComponent implements OnInit {
-  elementText: string;
-  
   @Output() itemCreated = new EventEmitter();
+
+  elementText: string;
+  createForm!: FormGroup;
 
   constructor(private todoListService: TodoListService) { }
 
   ngOnInit() {
+    this.createForm = new FormGroup({
+      task: new FormControl(this.elementText, [
+        Validators.required,
+        Validators.pattern(/[\S]/)
+      ]),
+    });
   }
 
-  onCreate(){
+  onCreate() {
+    if (!this.isValid()) return;
     this.todoListService.addListElement(this.elementText);
     this.itemCreated.emit();
   }
+
+  isValid(): boolean {
+    return this.task.valid;
+  }
+
+  get task() { return this.createForm.get('task')!; }
 }

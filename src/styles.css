@@ -31,3 +31,10 @@
 .save-btn:hover {
     background: url('./assets/images/check_hover.png') no-repeat center center / contain;
 }
+
+.alert div {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1px;
+    margin: 1px;
+  }

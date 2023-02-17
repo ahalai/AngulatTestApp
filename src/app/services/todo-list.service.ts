@@ -59,7 +59,7 @@ export class TodoListService {
     }
     else {
       newToDoList = toDoList.slice(0, index);
-      newToDoList.concat(toDoList.slice(index + 1));
+      newToDoList = newToDoList.concat(toDoList.slice(index + 1));
     }
 
     this.setToDoList(newToDoList);

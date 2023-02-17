@@ -1,7 +1,15 @@
 <div class="create-list-element">
     <h3>Добавить новую запись в список задач</h3>
-    <div>
-        <input type="text" [(ngModel)]="elementText" placeholder="Введите описание задачи" maxlength="70">
-        <button (click)="onCreate()">Добавить</button>
-    </div>
+    <form [formGroup]="createForm">
+        <div>
+            <input type="text" [(ngModel)]="elementText" formControlName="task" placeholder="Введите описание задачи"
+                maxlength="70" required>
+            <button (click)="onCreate()">Добавить</button>
+        </div>
+        <div *ngIf="task.invalid && (task.dirty || task.touched)" class="alert">
+            <div *ngIf="task.errors['required'] || task.errors['pattern']">
+                Необходимо заполнить описание задачи.
+            </div>
+        </div>
+    </form>
 </div>
