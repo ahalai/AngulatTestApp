@@ -1,5 +1,8 @@
-<div class="main">
-  <app-quote-carousel></app-quote-carousel>
-  <hr>
-  <app-todo-list></app-todo-list>
+<div class="wrapper">
+  <h1 class="title">Тестовое задание</h1>
+  <nav>
+    <a routerLink="/quotes" routerLinkActive="active" ariaCurrentWhenActive="page">Quotes</a>
+    <a routerLink="/todo-list" routerLinkActive="active" ariaCurrentWhenActive="page">ToDoList</a>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
